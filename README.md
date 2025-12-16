@@ -1,100 +1,97 @@
-Analisis Sentimen Maxim - Natural Language Processing
+# Analisis Sentimen Maxim – Natural Language Processing
 
-📋 Gambaran Proyek
+## 📋 Gambaran Proyek
+Proyek ini merupakan implementasi **pipeline Natural Language Processing (NLP) end-to-end** untuk menganalisis sentimen ulasan pengguna aplikasi transportasi online **Maxim (com.taxsee.taxsee)** yang diambil dari **Google Play Store**.  
+Pipeline mencakup seluruh tahapan analisis teks, mulai dari **pengambilan data (scraping)**, **pembersihan data (text preprocessing)**, hingga **klasifikasi sentimen** menggunakan algoritma *Machine Learning*.
 
-Proyek ini merupakan implementasi lengkap pipeline Natural Language Processing (NLP) untuk menganalisis sentimen ulasan pengguna aplikasi transportasi online Maxim (com.taxsee.taxsee) dari Google Play Store. Proyek ini mencakup seluruh tahapan analisis teks mulai dari pengambilan data (scraping), pembersihan data (cleaning), hingga klasifikasi sentimen menggunakan algoritma Machine Learning.
+---
 
-🎯 Tujuan Proyek
+## 🎯 Tujuan Proyek
+- Mengimplementasikan pipeline **End-to-End NLP** untuk teks **Bahasa Indonesia**.
+- Menganalisis sentimen ulasan pengguna Maxim (**Positif / Negatif**).
+- Mengidentifikasi pola kata yang sering muncul pada keluhan dan pujian pelanggan.
+- Membangun model prediksi sentimen otomatis menggunakan **Naive Bayes**.
 
-Mengimplementasikan pipeline End-to-End NLP untuk teks Bahasa Indonesia.
+---
 
-Menganalisis sentimen (Positif/Negatif) dari ulasan pengguna Maxim.
+## 🛠️ Teknologi yang Digunakan
+- **Python 3.x**
+- **Google Play Scraper** – Pengambilan data ulasan dari Play Store
+- **Pandas & NumPy** – Manipulasi dan analisis data
+- **NLTK** – Tokenisasi dan stopwords Bahasa Indonesia
+- **Sastrawi** – Stemming Bahasa Indonesia (opsional/pendukung)
+- **Scikit-learn** – Feature extraction (TF-IDF) & modelling (Naive Bayes)
+- **Matplotlib & Seaborn** – Visualisasi data (Bar Chart, Confusion Matrix)
 
-Memahami pola kata yang sering muncul pada keluhan maupun pujian pelanggan.
+---
 
-Membangun model prediksi sentimen otomatis menggunakan Naive Bayes.
+## 📚 Struktur Proyek
+### Week 2 – Data Scraping & Preprocessing
+Tahap pengumpulan dan pembersihan data ulasan Maxim.  
+**Teknik:** Scraping, Cleaning (Regex), Tokenization, Stopwords Removal
 
-🛠️ Teknologi yang Digunakan
+### Week 3 – Feature Extraction (TF-IDF)
+Mengubah data teks menjadi representasi numerik agar dapat diproses oleh algoritma Machine Learning.  
+**Teknik:** TF-IDF (Term Frequency–Inverse Document Frequency)
 
-Python 3.x
+### Week 4 – Modelling & Evaluation
+Pembangunan model klasifikasi dan evaluasi performa model.  
+**Teknik:** Multinomial Naive Bayes, Confusion Matrix, Classification Report
 
-Google Play Scraper: Pengambilan data ulasan dari Play Store.
+---
 
-Pandas & NumPy: Manipulasi dan analisis data tabular.
+## 📊 Dataset
+Dataset penelitian ini disimpan pada **media penyimpanan eksternal (Google Drive)** karena keterbatasan ukuran file pada repositori GitHub.  
+Dataset mencakup data mentah (*raw*) hingga data yang telah dibersihkan (*clean*).
 
-NLTK: Tokenisasi dan Stopwords Bahasa Indonesia.
+📂 **Link Dataset:**  
+https://drive.google.com/drive/folders/1Zpp6R7zrfo3FNoStqoXnb76kJlHDSzr4?usp=sharing
 
-Sastrawi: Stemming dan resource bahasa Indonesia (opsional/pendukung).
+### File dalam Dataset:
+- `maxim_raw.csv`
+- `maxim_clean_basic.csv`
+- `maxim_clean_final.csv`
 
-Scikit-learn: Feature Extraction (TF-IDF) dan Modelling (Naive Bayes).
+---
 
-Matplotlib & Seaborn: Visualisasi data (Bar Chart, Confusion Matrix).
+## 🚀 Cara Penggunaan
 
-📚 Struktur Proyek
-
-Week 2: Data Scraping & Preprocessing
-
-Tahap pengumpulan data ulasan Maxim dan pembersihan teks.
-
-Teknik: Scraping, Cleaning (Regex), Tokenization, Stopwords Removal.
-
-Week 3: Feature Extraction (TF-IDF)
-
-Mengubah data teks menjadi format numerik agar bisa diproses algoritma.
-
-Teknik: TF-IDF (Term Frequency-Inverse Document Frequency).
-
-Week 4: Modelling & Evaluation
-
-Pembangunan model klasifikasi dan evaluasi performa.
-
-Teknik: Multinomial Naive Bayes, Confusion Matrix, Classification Report.
-
-📊 Dataset
-
-Dataset penelitian ini disimpan pada media penyimpanan eksternal (Google Drive) karena keterbatasan ukuran file pada repositori GitHub. Dataset mencakup file mentah (raw) hingga file yang sudah bersih (clean).
-
-Dataset dapat diakses dan diunduh melalui tautan berikut:
-📂 https://drive.google.com/drive/folders/1Zpp6R7zrfo3FNoStqoXnb76kJlHDSzr4?usp=sharing
-
-File dalam dataset:
-
-maxim_raw.csv
-
-maxim_clean_basic.csv
-
-maxim_clean_final.csv
-
-🚀 Cara Penggunaan
-
-1. Instalasi Dependencies
-
-# Install required packages
+### 1. Instalasi Dependencies
+```bash
 pip install google-play-scraper Sastrawi textblob seaborn matplotlib scikit-learn pandas nltk
-
-# Download NLTK data
+```
+#### Unduh resource NLTK:
+```bash
 python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
+```
 
-
-2. Persiapan Data
-
+### 2. Persiapan Data
 Karena dataset berada di Google Drive:
+- Unduh seluruh file .csv dari tautan dataset.
+- Letakkan file-file tersebut dalam folder yang sama dengan file notebook (.ipynb).
 
-Unduh semua file .csv dari tautan Google Drive di atas.
-
-Letakkan file-file tersebut dalam satu folder yang sama dengan file notebook (.ipynb).
-
-3. Menjalankan Notebook
-
-Jalankan file notebook utama:
-
+### 3. Menjalankan Notebook
+Jalankan notebook utama:
+```bash
 jupyter notebook "Tugas_1A_Maxim_5026221091.ipynb"
+```
 
+## 📝 Struktur Direktori Repository
 
-📝 Struktur Direktori Repository
-
+```
 Tugas1A_Maxim_Edward/
 │
-├── Tugas_1A_Maxim_5026221091.ipynb   # Notebook Utama (Pipeline Gabungan)
-│
-└── README.md                         # Dokumentasi Proyek
+├── Tugas_1A_Maxim_5026221091.ipynb   # Notebook utama (pipeline NLP)
+└── README.md                        # Dokumentasi proyek
+```
+
+## 📌 Catatan
+
+- Dataset tidak diunggah langsung ke repository GitHub karena keterbatasan ukuran file.
+- Pastikan seluruh dependency telah terpasang sebelum menjalankan notebook.
+
+## 👤 Pembuat
+
+**Edward Yosafat Sirait**  
+NRP: 5026221091  
+Tugas 1A - Pemrosesan Bahasa Alami (PBA)
